@@ -1,0 +1,51 @@
+﻿@model Abantwana_DayCare.Models.Enrollment
+
+@{
+	ViewBag.Title = "Details";
+	Layout = "~/Views/Shared/_Dashboard.cshtml";
+}
+
+
+
+<div>
+    <h4>Enrollment</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Course.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Course.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quiz.Question)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quiz.Question)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Toodler.First_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Toodler.First_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Grade)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Grade)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Enrollment_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

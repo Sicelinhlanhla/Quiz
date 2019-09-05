@@ -1,0 +1,35 @@
+﻿@model Abantwana_DayCare.Models.Learning_Material
+
+@{
+	ViewBag.Title = "Details";
+	Layout = "~/Views/Shared/_Dashboard.cshtml";
+}
+
+
+
+<div>
+    <h4>Learning_Material</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.material)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.material)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Material_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

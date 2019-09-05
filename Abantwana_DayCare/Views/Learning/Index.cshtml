@@ -1,0 +1,87 @@
+﻿@model IEnumerable<Abantwana_DayCare.Models.Learning_Material>
+
+@{
+	ViewBag.Title = "Index";
+	Layout = "~/Views/Shared/_Dashboard.cshtml";
+}
+
+<div class="row page-titles">
+	<div class="col-md-5 col-8 align-self-center">
+		<h3 class="text-themecolor">ADMIN DASHBOARD</h3>
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+			<li class="breadcrumb-item active">Learning Mateiral</li>
+		</ol>
+	</div>
+	<div class="col-md-7 col-4 align-self-center">
+		<div class="d-flex m-t-10 justify-content-end">
+			<div class="d-flex m-r-20 m-l-10 hidden-md-down">
+				<div class="chart-text m-r-10">
+					@*<h6 class="m-b-0"><small>THIS MONTH</small></h6>
+						<h4 class="m-t-0 text-info">$58,356</h4>*@
+				</div>
+				@*<div class="spark-chart">
+						<div id="monthchart"></div>
+					</div>*@
+			</div>
+			<div class="d-flex m-r-20 m-l-10 hidden-md-down">
+
+
+			</div>
+			<div class="">
+				<button class="right-side-toggle waves-effect waves-light btn-success btn btn-circle btn-sm pull-right m-l-10"><i class="ti-settings text-white"></i></button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<hr />
+
+<p>
+
+	<a class="btn btn-outline-primary" href="@Url.Action("Create", "Quizes")">
+		<i class="fa fa-backward"></i> Create
+	</a>
+
+</p>
+<table class="table">
+	<tr>
+		<th>
+			@Html.DisplayNameFor(model => model.material)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.Description)
+		</th>
+		<th></th>
+	</tr>
+
+	@foreach (var item in Model)
+	{
+		<tr>
+			<td>
+				@*@using (FileStream stream = System.IO.File.Create(Convert.ToString(item.material)))
+				{
+					byte[] byteArray=Convert.FromBase64String(base64binary)
+				}*@
+				<embed src="data:application/pdf;base64,@Convert.ToBase64String(item.material, 0, item.material.Length)" type="application/pdf" style="width: 60px; height: 60px" alt="" />
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Description)
+			</td>
+			<td>
+
+				<a class="btn btn-success" href="@Url.Action("Edit", "Quizes", new { id = item.Material_ID })">
+					<i class="fa fa-edit"></i>
+				</a> |
+				<a class="btn btn-primary" href="@Url.Action("Details", "Quizes", new { id = item.Material_ID })">
+					<i class="fa fa-info"></i>
+				</a> |
+				<a class="btn btn-danger" href="@Url.Action("Delete", "Quizes", new { id = item.Material_ID })">
+					<i class="fa fa-trash"></i>
+				</a>
+	
+			</td>
+		</tr>
+	}
+
+</table>
