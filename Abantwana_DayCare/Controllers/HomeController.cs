@@ -10,6 +10,18 @@ namespace Abantwana_DayCare.Controllers
 	{
 		public ActionResult Index()
 		{
+			if (User.IsInRole("Admin"))
+			{
+				return View("Dashboard");
+
+			}
+
+
+
+			return View();
+		}
+		public ActionResult Dashboard()
+		{
 			return View();
 		}
 

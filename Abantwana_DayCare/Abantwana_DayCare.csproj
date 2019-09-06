@@ -175,13 +175,16 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ParentsController.cs" />
     <Compile Include="Controllers\QuizesController.cs" />
+    <Compile Include="Controllers\RolesAdminController.cs" />
     <Compile Include="Controllers\StaffsController.cs" />
     <Compile Include="Controllers\ToodlersController.cs" />
+    <Compile Include="Controllers\UsersAdminController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AdminViewModel.cs" />
     <Compile Include="Models\Course.cs" />
     <Compile Include="Models\Enrollment.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -202,6 +205,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\choice.js" />
+    <Content Include="Content\LoginStyle.css" />
     <Content Include="Content\material-pro\assets\images\alert\alert.png" />
     <Content Include="Content\material-pro\assets\images\alert\alert2.png" />
     <Content Include="Content\material-pro\assets\images\alert\alert3.png" />
@@ -6733,6 +6737,8 @@
     <Content Include="Images\gal8.jpg" />
     <Content Include="Images\left.png" />
     <Content Include="Images\model.jpg" />
+    <Content Include="Images\placeholder.jpg" />
+    <Content Include="Images\profile-background.png" />
     <Content Include="Images\right.png" />
     <Content Include="Images\scroll-top.png" />
     <Content Include="Images\stretch.jpg" />
@@ -9397,6 +9403,17 @@
     <Content Include="Views\Quizes\Edit.cshtml" />
     <Content Include="Views\Quizes\Index.cshtml" />
     <Content Include="Views\Quizes\Take_Quiz.cshtml" />
+    <Content Include="Views\RolesAdmin\Create.cshtml" />
+    <Content Include="Views\RolesAdmin\Delete.cshtml" />
+    <Content Include="Views\RolesAdmin\Details.cshtml" />
+    <Content Include="Views\RolesAdmin\Edit.cshtml" />
+    <Content Include="Views\RolesAdmin\Index.cshtml" />
+    <Content Include="Views\UsersAdmin\Create.cshtml" />
+    <Content Include="Views\UsersAdmin\Delete.cshtml" />
+    <Content Include="Views\UsersAdmin\Details.cshtml" />
+    <Content Include="Views\UsersAdmin\Edit.cshtml" />
+    <Content Include="Views\UsersAdmin\Index.cshtml" />
+    <Content Include="Views\Home\Dashboard.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

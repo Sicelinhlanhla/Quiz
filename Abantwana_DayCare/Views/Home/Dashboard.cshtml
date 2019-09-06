@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Views/Shared/_Dashboard.cshtml";
+}
+
+
+
+<div class="row">
+	<div class="col-12 m-t-30">
+		<h4 class="m-b-0">Admin Home Page</h4>
+		<p class="text-muted m-t-0 font-12">Manage your school</p>
+	</div>
+	<div class="col-md-6">
+		<div class="card">
+			<div class="card-body">
+				<h3 class="card-title">Quiz Preview</h3>
+				<p class="card-text">click the button to see how questions will look like when Toddlers are being asked.</p>
+				<a href="@Url.Action("Take_Quiz","Quizes")" class="btn btn-success">Go to priview</a>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<div class="card">
+			<div class="card-body">
+				<h3 class="card-title">Question List</h3>
+				<p class="card-text">See all the questions you currently have so you can add more if you want to.</p>
+				<a href="@Url.Action("Index","Quizes")" class="btn btn-primary">Go Question List</a>
+			</div>
+		</div>
+	</div>
+</div>

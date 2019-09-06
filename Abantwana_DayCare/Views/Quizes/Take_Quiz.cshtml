@@ -1,39 +1,11 @@
 ﻿@model IEnumerable<Abantwana_DayCare.Models.Quiz>
 
-@*<table class="table">
-	<tr>
-		<th>
-			@Html.DisplayNameFor(model => model.Learning.Description)
-		</th>
-		<th>
-			@Html.DisplayNameFor(model => model.Question)
-		</th>
-		<th>
-			@Html.DisplayNameFor(model => model.Answer)
-		</th>
-		<th>
-		<th>
-			@Html.DisplayNameFor(model => model.A)
-		</th>
-		<th>
-			@Html.DisplayNameFor(model => model.B)
-		</th>
-		<th>
-			@Html.DisplayNameFor(model => model.C)
-		</th>
-		<th>
-			@Html.DisplayNameFor(model => model.D)
-		</th>
-		<th></th>
-	</tr>
-
-	@foreach (var item in Model)
+@{
+	if(User.IsInRole("Admin"))
 	{
-
-
+ Layout = "~/Views/Shared/_Dashboard.cshtml";
 	}
-
-</table>*@
+}
 
 
 @foreach (var item in Model)

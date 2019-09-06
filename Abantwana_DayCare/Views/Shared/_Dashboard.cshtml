@@ -1,4 +1,6 @@
-﻿
+﻿@using Microsoft.AspNet.Identity
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -261,7 +263,7 @@
 								<i class="mdi mdi-email"></i>
 								<div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
 							</a>
-							<div class="dropdown-menu mailbox dropdown-menu-right scale-up" aria-labelledby="2">
+							@*<div class="dropdown-menu mailbox dropdown-menu-right scale-up" aria-labelledby="2">
 								<ul>
 									<li>
 										<div class="drop-title">You have 4 new messages</div>
@@ -302,69 +304,60 @@
 										<a class="nav-link text-center" href="javascript:void(0);"> <strong>See all e-Mails</strong> <i class="fa fa-angle-right"></i> </a>
 									</li>
 								</ul>
-							</div>
+							</div>*@
 						</li>
-						<!-- ============================================================== -->
-						<!-- End Messages -->
-						<!-- ============================================================== -->
-						<!-- ============================================================== -->
-						<!-- Profile -->
-						<!-- ============================================================== -->
+	
+
 						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="~/Content/material-pro/assets/images/users/1.jpg" alt="user" class="profile-pic" /></a>
+							<a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="~/Images/placeholder.jpg" alt="user" class="profile-pic" /></a>
 							<div class="dropdown-menu dropdown-menu-right scale-up">
 								<ul class="dropdown-user">
 									<li>
 										<div class="dw-user-box">
-											<div class="u-img"><img src="~/Content/material-pro/assets/images/users/1.jpg" alt="user"></div>
+											<div class="u-img"><img src="~/Images/placeholder.jpg" alt="user"></div>
 											<div class="u-text">
-												<h4>Steave Jobs</h4>
-												<p class="text-muted">varun@gmail.com</p><a href="profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a>
-											</div>
+											<h4>Hello There!!!</h4>
+												
+												<p class="text-muted"></p><a href="@Url.Action("Index","Manage")" class="btn btn-rounded btn-danger btn-sm">Manage Profile </a>
+</div>
 										</div>
 									</li>
 									<li role="separator" class="divider"></li>
-									<li><a href="#"><i class="ti-user"></i> My Profile</a></li>
-									<li><a href="#"><i class="ti-wallet"></i> My Balance</a></li>
-									<li><a href="#"><i class="ti-email"></i> Inbox</a></li>
+									
+									
+									<li><a href="@Url.Action("Index","Manage")"><i class="ti-settings"></i> Account Setting</a></li>
 									<li role="separator" class="divider"></li>
-									<li><a href="#"><i class="ti-settings"></i> Account Setting</a></li>
-									<li role="separator" class="divider"></li>
-									<li><a href="#"><i class="fa fa-power-off"></i> Logout</a></li>
+									@if(User.Identity.IsAuthenticated)
+									{
+										@Html.Partial("_LoginPartial");
+									}
+									
 								</ul>
 							</div>
 						</li>
-						<!-- ============================================================== -->
-						<!-- Language -->
-						<!-- ============================================================== -->
-						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="flag-icon flag-icon-us"></i></a>
-							<div class="dropdown-menu dropdown-menu-right scale-up"> <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-in"></i> India</a> <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-fr"></i> French</a> <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-cn"></i> China</a> <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-de"></i> Dutch</a> </div>
-						</li>
+	
+						
 					</ul>
 				</div>
 			</nav>
 		</header>
-		<!-- ============================================================== -->
-		<!-- End Topbar header -->
-		<!-- ============================================================== -->
-		<!-- ============================================================== -->
-		<!-- Left Sidebar - style you can find in sidebar.scss  -->
-		<!-- ============================================================== -->
+
 		<aside class="left-sidebar">
 			<!-- Sidebar scroll-->
 			<div class="scroll-sidebar">
 				<!-- User profile -->
-				<div class="user-profile" style="background: url(~/Content/material-pro/assets/images/background/user-info.jpg) no-repeat;">
+			
+		
+				<div class="user-profile" style="background: url(~/Images/profile-background.png) no-repeat;">
 					<!-- User profile image -->
-					<div class="profile-img"> <img src="~/Content/material-pro/assets/images/users/profile.png" alt="user" /> </div>
+					<div class="profile-img"> <img src="~/Images/placeholder.jpg" alt="user" /> </div>
 					<!-- User profile text-->
 					<div class="profile-text">
-						<a href="#" class="dropdown-toggle u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Markarn Doe</a>
+						<a href="#" class="dropdown-toggle u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">my profile</a>
 						<div class="dropdown-menu animated flipInY">
 							<a href="#" class="dropdown-item"><i class="ti-user"></i> My Profile</a> <a href="#" class="dropdown-item"><i class="ti-wallet"></i> My Balance</a> <a href="#" class="dropdown-item"><i class="ti-email"></i> Inbox</a>
-							<div class="dropdown-divider"></div> <a href="#" class="dropdown-item"><i class="ti-settings"></i> Account Setting</a>
-							<div class="dropdown-divider"></div> <a href="login.html" class="dropdown-item"><i class="fa fa-power-off"></i> Logout</a>
+							<div class="dropdown-divider"></div> <a href="@Url.Action("Index","Manage")" class="dropdown-item"><i class="ti-settings"></i> Account Setting</a>
+							
 						</div>
 					</div>
 				</div>
@@ -384,10 +377,14 @@
 							</ul>
 						</li>
 						<li>
-							<a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-laptop-windows"></i><span class="hide-menu">Template Demos</span></a>
-							<ul aria-expanded="false" class="collapse"></ul>
-						</li>
-						<li>
+							<a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-laptop-windows"></i><span class="hide-menu">Administration</span></a>
+							<ul aria-expanded="false" class="collapse">
+								<li><a href="@Url.Action("Index", "UsersAdmin")">All Users</a></li>
+								<li><a href="@Url.Action("Index", "RolesAdmin")">All Roles</a></li>
+								<li><a href="@Url.Action("Index", "RolesAdmin")">Manage Roles</a></li>
+							</ul>
+						
+						@*<li>
 							<a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-bullseye"></i><span class="hide-menu">Apps</span></a>
 							<ul aria-expanded="false" class="collapse">
 								<li><a href="app-calendar.html">Calendar</a></li>
@@ -400,7 +397,7 @@
 								<li><a href="app-email.html">Mailbox</a></li>
 
 							</ul>
-						</li>
+						</li>*@
 
 					</ul>
 				</nav>
@@ -420,18 +417,10 @@
 			<!-- ============================================================== -->
 			<!-- Container fluid  -->
 			<!-- ============================================================== -->
+
+			<br/>
 			<div class="container-fluid">
-				<!-- ============================================================== -->
-				<!-- Bread crumb and right sidebar toggle -->
-				<!-- ============================================================== -->
-				<!-- ============================================================== -->
-				<!-- End Bread crumb and right sidebar toggle -->
-				<!-- ============================================================== -->
-				<!-- ============================================================== -->
-				<!-- Start Page Content -->
-				<!-- ============================================================== -->
-				<!-- Row -->
-				<!-- Row -->
+		
 				<div class="row">
 					<div class="card col-lg-12">
 
@@ -442,92 +431,18 @@
 					</div>
 
 				</div>
-				<!-- Row -->
-				<!-- ============================================================== -->
-				<!-- End PAge Content -->
-				<!-- ============================================================== -->
-				<!-- ============================================================== -->
-				<!-- Right sidebar -->
-				<!-- ============================================================== -->
-				<!-- .right-sidebar -->
-				<div class="right-sidebar">
-					<div class="slimscrollright">
-						<div class="rpanel-title"> Service Panel <span><i class="ti-close right-side-toggle"></i></span> </div>
-						<div class="r-panel-body">
-							<ul id="themecolors" class="m-t-20">
-								<li><b>With Light sidebar</b></li>
-								<li><a href="javascript:void(0)" data-theme="default" class="default-theme">1</a></li>
-								<li><a href="javascript:void(0)" data-theme="green" class="green-theme">2</a></li>
-								<li><a href="javascript:void(0)" data-theme="red" class="red-theme">3</a></li>
-								<li><a href="javascript:void(0)" data-theme="blue" class="blue-theme working">4</a></li>
-								<li><a href="javascript:void(0)" data-theme="purple" class="purple-theme">5</a></li>
-								<li><a href="javascript:void(0)" data-theme="megna" class="megna-theme">6</a></li>
-								<li class="d-block m-t-30"><b>With Dark sidebar</b></li>
-								<li><a href="javascript:void(0)" data-theme="default-dark" class="default-dark-theme">7</a></li>
-								<li><a href="javascript:void(0)" data-theme="green-dark" class="green-dark-theme">8</a></li>
-								<li><a href="javascript:void(0)" data-theme="red-dark" class="red-dark-theme">9</a></li>
-								<li><a href="javascript:void(0)" data-theme="blue-dark" class="blue-dark-theme">10</a></li>
-								<li><a href="javascript:void(0)" data-theme="purple-dark" class="purple-dark-theme">11</a></li>
-								<li><a href="javascript:void(0)" data-theme="megna-dark" class="megna-dark-theme ">12</a></li>
-							</ul>
-							<ul class="m-t-20 chatonline">
-								<li><b>Chat option</b></li>
-								<li>
-									<a href="javascript:void(0)"><img src="~/Content/material-pro/assets/images/users/1.jpg" alt="user-img" class="img-circle"> <span>Varun Dhavan <small class="text-success">online</small></span></a>
-								</li>
-								<li>
-									<a href="javascript:void(0)"><img src="~/Content/material-pro/assets/images/users/2.jpg" alt="user-img" class="img-circle"> <span>Genelia Deshmukh <small class="text-warning">Away</small></span></a>
-								</li>
-								<li>
-									<a href="javascript:void(0)"><img src="~/Content/material-pro/assets/images/users/3.jpg" alt="user-img" class="img-circle"> <span>Ritesh Deshmukh <small class="text-danger">Busy</small></span></a>
-								</li>
-								<li>
-									<a href="javascript:void(0)"><img src="../assets/images/users/4.jpg" alt="user-img" class="img-circle"> <span>Arijit Sinh <small class="text-muted">Offline</small></span></a>
-								</li>
-								<li>
-									<a href="javascript:void(0)"><img src="~/Content/material-pro/assets/images/users/5.jpg" alt="user-img" class="img-circle"> <span>Govinda Star <small class="text-success">online</small></span></a>
-								</li>
-								<li>
-									<a href="javascript:void(0)"><img src="~/Content/material-pro/assets/images/users/6.jpg" alt="user-img" class="img-circle"> <span>John Abraham<small class="text-success">online</small></span></a>
-								</li>
-								<li>
-									<a href="javascript:void(0)"><img src="~/Content/material-pro/assets/images/users/7.jpg" alt="user-img" class="img-circle"> <span>Hritik Roshan<small class="text-success">online</small></span></a>
-								</li>
-								<li>
-									<a href="javascript:void(0)"><img src="~/Content/material-pro/assets/images/users/8.jpg" alt="user-img" class="img-circle"> <span>Pwandeep rajan <small class="text-success">online</small></span></a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<!-- ============================================================== -->
-				<!-- End Right sidebar -->
-				<!-- ============================================================== -->
+			
 			</div>
-			<!-- ============================================================== -->
-			<!-- End Container fluid  -->
-			<!-- ============================================================== -->
-			<!-- ============================================================== -->
-			<!-- footer -->
-			<!-- ============================================================== -->
+	
 			<footer class="footer">
 				© 2019 Abantwana Daycare  All rights reserved
 			</footer>
-			<!-- ============================================================== -->
-			<!-- End footer -->
-			<!-- ============================================================== -->
+		
 		</div>
-		<!-- ============================================================== -->
-		<!-- End Page wrapper  -->
-		<!-- ============================================================== -->
+
 	</div>
 	@RenderSection("scripts", required: false)
-	<!-- ============================================================== -->
-	<!-- End Wrapper -->
-	<!-- ============================================================== -->
-	<!-- ============================================================== -->
-	<!-- All Jquery -->
-	<!-- ============================================================== -->
+f
 	<script src="~/Content/material-pro/assets/plugins/jquery/jquery.min.js"></script>
 	<!-- Bootstrap tether Core JavaScript -->
 	<script src="~/Content/material-pro/assets/plugins/popper/popper.min.js"></script>
