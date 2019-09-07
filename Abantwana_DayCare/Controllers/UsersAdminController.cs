@@ -114,10 +114,7 @@ namespace Abantwana_DayCare.Controllers
 					FullName = userViewModel.FirstName + " " + userViewModel.LastName,
 					PhoneNumber = userViewModel.phone,
 					Address = userViewModel.address,
-					isInstructor = true
-             
-          
-                  
+					isInstructor = true   
                 };
 
 

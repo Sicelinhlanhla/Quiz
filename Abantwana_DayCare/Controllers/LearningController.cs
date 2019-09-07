@@ -35,6 +35,11 @@ namespace Abantwana_DayCare.Controllers
             return View(learning_Material);
         }
 
+        public ActionResult Learning_preview()
+        {
+            return View();
+        }
+
         // GET: Learning/Create
         public ActionResult Create()
         {

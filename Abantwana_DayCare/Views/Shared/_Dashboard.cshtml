@@ -61,16 +61,16 @@
 						<!-- Logo icon --><b>
 							<!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
 							<!-- Dark Logo icon -->
-							<img src="~/Content/material-pro/assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
+							@*<img src="~/Content/material-pro/assets/images/logo-icon.png" alt="homepage" class="dark-logo" />*@
 							<!-- Light Logo icon -->
-							<img src="~/Content/material-pro/assets/images/logo-light-icon.png" alt="homepage" class="light-logo" />
+							@*<img src="~/Content/material-pro/assets/images/logo-light-icon.png" alt="homepage" class="light-logo" />*@
 						</b>
 						<!--End Logo icon -->
 						<!-- Logo text --><span>
 							<!-- dark Logo text -->
-							<img src="~/Content/material-pro/assets/images/logo-text.png" alt="homepage" class="dark-logo" />
+							@*<img src="~/Content/material-pro/assets/images/logo-text.png" alt="homepage" class="dark-logo" />*@
 							<!-- Light Logo text -->
-							<img src="~/Content/material-pro/assets/images/logo-light-text.png" class="light-logo" alt="homepage" />
+							@*<img src="~/Content/material-pro/assets/images/logo-light-text.png" class="light-logo" alt="homepage" />*@
 						</span>
 					</a>
 				</div>
@@ -97,7 +97,7 @@
 						<!-- ============================================================== -->
 						<!-- Messages -->
 						<!-- ============================================================== -->
-						<li class="nav-item dropdown mega-dropdown">
+						@*<li class="nav-item dropdown mega-dropdown">
 							<a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="mdi mdi-view-grid"></i></a>
 							<div class="dropdown-menu scale-up-left">
 								<ul class="mega-dropdown-menu row">
@@ -192,7 +192,7 @@
 									</li>
 								</ul>
 							</div>
-						</li>
+						</li>*@
 						<!-- ============================================================== -->
 						<!-- End Messages -->
 						<!-- ============================================================== -->
@@ -204,7 +204,7 @@
 						<!-- ============================================================== -->
 						<!-- Comment -->
 						<!-- ============================================================== -->
-						<li class="nav-item dropdown">
+						@*<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle text-muted text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								<i class="mdi mdi-message"></i>
 								<div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
@@ -251,19 +251,19 @@
 									</li>
 								</ul>
 							</div>
-						</li>
+						</li>*@
 						<!-- ============================================================== -->
 						<!-- End Comment -->
 						<!-- ============================================================== -->
 						<!-- ============================================================== -->
 						<!-- Messages -->
 						<!-- ============================================================== -->
-						<li class="nav-item dropdown">
+						@*<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" id="2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								<i class="mdi mdi-email"></i>
 								<div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
 							</a>
-							@*<div class="dropdown-menu mailbox dropdown-menu-right scale-up" aria-labelledby="2">
+							<div class="dropdown-menu mailbox dropdown-menu-right scale-up" aria-labelledby="2">
 								<ul>
 									<li>
 										<div class="drop-title">You have 4 new messages</div>
@@ -304,8 +304,8 @@
 										<a class="nav-link text-center" href="javascript:void(0);"> <strong>See all e-Mails</strong> <i class="fa fa-angle-right"></i> </a>
 									</li>
 								</ul>
-							</div>*@
-						</li>
+							</div>
+						</li>*@
 	
 
 						<li class="nav-item dropdown">
@@ -316,7 +316,7 @@
 										<div class="dw-user-box">
 											<div class="u-img"><img src="~/Images/placeholder.jpg" alt="user"></div>
 											<div class="u-text">
-											<h4>Hello There!!!</h4>
+											<h4>Hello There!!</h4>
 												
 												<p class="text-muted"></p><a href="@Url.Action("Index","Manage")" class="btn btn-rounded btn-danger btn-sm">Manage Profile </a>
 </div>
@@ -350,59 +350,60 @@
 		
 				<div class="user-profile" style="background: url(~/Images/profile-background.png) no-repeat;">
 					<!-- User profile image -->
-					<div class="profile-img"> <img src="~/Images/placeholder.jpg" alt="user" /> </div>
+					<div class="profile-img"> <img src="~/Images/placeholder.jpg" alt="user" /> ADMIN</div>
 					<!-- User profile text-->
 					<div class="profile-text">
-						<a href="#" class="dropdown-toggle u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">my profile</a>
+						<a href="#" class="dropdown-toggle u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">My profile</a>
 						<div class="dropdown-menu animated flipInY">
-							<a href="#" class="dropdown-item"><i class="ti-user"></i> My Profile</a> <a href="#" class="dropdown-item"><i class="ti-wallet"></i> My Balance</a> <a href="#" class="dropdown-item"><i class="ti-email"></i> Inbox</a>
-							<div class="dropdown-divider"></div> <a href="@Url.Action("Index","Manage")" class="dropdown-item"><i class="ti-settings"></i> Account Setting</a>
-							
-						</div>
-					</div>
+							<a href="#" class="dropdown-item"><i class="ti-user"></i> My Profile</a> @*<a href="#" class="dropdown-item"><i class="ti-wallet"></i> My Balance</a> <a href="#" class="dropdown-item"><i class="ti-email"></i> Inbox</a>*@
+					<div class="dropdown-divider"></div> <a href="@Url.Action("Index","Manage")" class="dropdown-item"><i class="ti-settings"></i> Account Setting</a>
+
 				</div>
-				<!-- End User profile text-->
-				<!-- Sidebar navigation-->
-				<nav class="sidebar-nav">
-					<ul id="sidebarnav">
-						<li class="nav-small-cap">SCHOOL ADMIN</li>
-						<li>
-							<a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Learning</span></a>
-							<ul aria-expanded="false" class="collapse">
+			</div>
+		</div>
+		<!-- End User profile text-->
+		<!-- Sidebar navigation-->
+		<nav class="sidebar-nav">
+			<ul id="sidebarnav">
+				<li class="nav-small-cap">SCHOOL ADMIN</li>
+				<li>
+					<a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Learning</span></a>
+					<ul aria-expanded="false" class="collapse">
 
-								<li><a href="@Url.Action("Index", "Quizes")">Quizes</a></li>
-								<li><a href="@Url.Action("Index", "Courses")">Courses</a></li>
-								<li><a href="@Url.Action("Index", "Staffs")">Instructors</a></li>
-								<li><a href="@Url.Action("Index", "Learning")">Learning Material</a></li>
-							</ul>
-						</li>
-						<li>
-							<a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-laptop-windows"></i><span class="hide-menu">Administration</span></a>
-							<ul aria-expanded="false" class="collapse">
-								<li><a href="@Url.Action("Index", "UsersAdmin")">All Users</a></li>
-								<li><a href="@Url.Action("Index", "RolesAdmin")">All Roles</a></li>
-								<li><a href="@Url.Action("Index", "RolesAdmin")">Manage Roles</a></li>
-							</ul>
-						
-						@*<li>
-							<a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-bullseye"></i><span class="hide-menu">Apps</span></a>
-							<ul aria-expanded="false" class="collapse">
-								<li><a href="app-calendar.html">Calendar</a></li>
+						<li><a href="@Url.Action("Index", "Quizes")">Quizes</a></li>
+						<li><a href="@Url.Action("Index", "Courses")">Courses</a></li>
+						<li><a href="@Url.Action("Index", "Staffs")">Instructors</a></li>
+						<li><a href="@Url.Action("Index", "Learning")">Learning Material</a></li>
+						<li><a href="@Url.Action("Take_Quiz", "Quizes")">Preview Quiz</a></li>
+					</ul>
+				</li>
+				<li>
+					<a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-laptop-windows"></i><span class="hide-menu">Administration</span></a>
+					<ul aria-expanded="false" class="collapse">
+						<li><a href="@Url.Action("Index", "UsersAdmin")">All Users</a></li>
+						<li><a href="@Url.Action("Index", "RolesAdmin")">All Roles</a></li>
+						<li><a href="@Url.Action("Index", "RolesAdmin")">Manage Roles</a></li>
+					</ul>
 
-							</ul>
-						</li>
-						<li>
-							<a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-email"></i><span class="hide-menu">Inbox</span></a>
-							<ul aria-expanded="false" class="collapse">
-								<li><a href="app-email.html">Mailbox</a></li>
-
-							</ul>
-						</li>*@
+				@*<li>
+					<a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-bullseye"></i><span class="hide-menu">Apps</span></a>
+					<ul aria-expanded="false" class="collapse">
+						<li><a href="app-calendar.html">Calendar</a></li>
 
 					</ul>
-				</nav>
-				<!-- End Sidebar navigation -->
-			</div>
+				</li>
+				<li>
+					<a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-email"></i><span class="hide-menu">Inbox</span></a>
+					<ul aria-expanded="false" class="collapse">
+						<li><a href="app-email.html">Mailbox</a></li>
+
+					</ul>
+				</li>*@
+
+							</ul>
+							</nav>
+							<!-- End Sidebar navigation -->
+						</div>
 			<!-- End Sidebar scroll-->
 			<!-- Bottom points-->
 			<!-- End Bottom points-->
