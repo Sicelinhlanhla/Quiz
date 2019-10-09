@@ -15,9 +15,10 @@
             @Html.DisplayNameFor(model => model.material)
         </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.material)
-        </dd>
+		<dd>
+			<embed src="data:application/pdf;base64,@Convert.ToBase64String(Model.material, 0, Model.material.Length)" type="application/pdf" style="width: 60px; height: 60px" alt="" />
+			@*@Html.DisplayFor(model => model.material)*@
+		</dd>
 
         <dt>
             @Html.DisplayNameFor(model => model.Description)

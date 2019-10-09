@@ -625,27 +625,27 @@ a.sign {
 /*-- banner-top --*/
 
 .banner-top {
-	background: url(../images/banner1.jpg) no-repeat 0px 0px;
+	background: url(../images/Technology-And-Child-Education.jpg) no-repeat 0px 0px;
 	background-size: cover;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	-moz-background-size: cover;
-	min-height: 750px;
+	min-height: 650px;
 }
 
 .banner-top1 {
-	background: url(../images/banner2.jpg) no-repeat 0px 0px;
+	background: url(../images/cybersecurity1.jpg) no-repeat 0px 0px;
 	background-size: cover;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	-moz-background-size: cover;
-	min-height: 750px;
+	min-height: 650px;
 }
 
-.banner-top2 {
-	background: url(../images/banner3.jpg) no-repeat 0px 0px;
+/*.banner-top2 {
+	background: url(../images/ChildParent.jpg) no-repeat 0px 0px;
 	background-size: cover;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -655,14 +655,14 @@ a.sign {
 }
 
 .banner-top3 {
-	background: url(../images/banner4.jpg) no-repeat 0px 0px;
+	background: url(../images/cybersecurity1.jpg) no-repeat 0px 0px;
 	background-size: cover;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	-moz-background-size: cover;
 	min-height: 750px;
-}
+}*/
 
 .banner-info-w3ls-agileinfo {
 	text-align: left;
@@ -2180,7 +2180,7 @@ label.header {
 	.banner-top1,
 	.banner-top2,
 	.banner-top3 {
-		min-height: 700px;
+		min-height: 760px;
 	}
 	.banner-info-w3ls-agileinfo {
 		text-align: left;
