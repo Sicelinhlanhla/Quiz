@@ -54,6 +54,19 @@ namespace Abantwana_DayCare.Controllers
 			}
 		}
 
+		private ApplicationRoleManager _roleManager;
+		public ApplicationRoleManager RoleManager
+		{
+			get
+			{
+				return _roleManager ?? HttpContext.GetOwinContext().Get<ApplicationRoleManager>();
+			}
+			private set
+			{
+				_roleManager = value;
+			}
+		}
+
 
 		// GET: Staffs
 		public ActionResult Index()
@@ -79,7 +92,8 @@ namespace Abantwana_DayCare.Controllers
         // GET: Staffs/Create
         public ActionResult Create()
         {
-            return View();
+			ViewBag.RoleId = new SelectList(RoleManager.Roles.ToList(), "Name", "Name");
+			return View();
         }
 
         // POST: Staffs/Create
@@ -96,9 +110,21 @@ namespace Abantwana_DayCare.Controllers
 				data = new byte[img_upload.ContentLength];
 				img_upload.InputStream.Read(data, 0, img_upload.ContentLength);
 
-				var user = new ApplicationUser { FullName = model.FirstName + " " + model.LastName, Id = model.ID_Number, UserName = model.FirstName + " " + model.LastName, Email = model.Email };
+				var user = new ApplicationUser { FullName = model.FirstName + " " + model.LastName, UserName = model.Email, Email = model.Email, Address=model.address,ContactNo=model.phone };
 				var staff = new StaffMember { StaffId = model.generateID(), FirstName = model.FirstName, Email = model.Email, LastName = model.LastName, phone = model.phone, ID_Number = model.ID_Number, address = model.address, qualification = model.qualification, Previous_Company = model.Previous_Company, Number_Of_Work = model.Number_Of_Work, Prev_CompanyPhone = model.Prev_CompanyPhone,Picture=data };
 				var result = UserManager.Create(user, model.Password);
+				
+				if (result.Succeeded)
+				{
+
+					var Roleresult = UserManager.AddToRolesAsync(user.Id, "Teacher");
+					if (!result.Succeeded)
+					{
+						ModelState.AddModelError("", result.Errors.First());
+						ViewBag.RoleId = new SelectList(RoleManager.Roles.ToList(), "Name", "Name");
+						return View();
+					}
+				}
 				db.StaffMembers.Add(staff);
                 db.SaveChanges();
                 return RedirectToAction("Index");

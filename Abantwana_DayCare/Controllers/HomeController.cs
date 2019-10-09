@@ -15,12 +15,27 @@ namespace Abantwana_DayCare.Controllers
 				return View("Dashboard");
 
 			}
+			else if (User.IsInRole("Teacher"))
+			{
+				return View("Portal");
+
+			}
+			else
+			{
+
+				return View();
+
+			}
 
 
 
-			return View();
+
 		}
 		public ActionResult Dashboard()
+		{
+			return View();
+		}
+		public ActionResult Portal()
 		{
 			return View();
 		}

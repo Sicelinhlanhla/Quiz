@@ -182,13 +182,7 @@
 									<li class="col-lg-3 col-xlg-4 m-b-30">
 										<h4 class="m-b-20">List style</h4>
 										<!-- List style -->
-										<ul class="list-style-none">
-											<li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> You can give link</a></li>
-											<li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> Give link</a></li>
-											<li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> Another Give link</a></li>
-											<li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> Forth link</a></li>
-											<li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> Another fifth link</a></li>
-										</ul>
+										
 									</li>
 								</ul>
 							</div>
@@ -263,9 +257,9 @@
 								<i class="mdi mdi-email"></i>
 								<div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
 							</a>
-				
+
 						</li>
-	
+
 
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="~/Images/placeholder.jpg" alt="user" class="profile-pic" /></a>
@@ -275,27 +269,27 @@
 										<div class="dw-user-box">
 											<div class="u-img"><img src="~/Images/placeholder.jpg" alt="user"></div>
 											<div class="u-text">
-											<h4>Hello There!!!</h4>
-												
+												<h4>Hello There!!!</h4>
+
 												<p class="text-muted"></p><a href="@Url.Action("Index","Manage")" class="btn btn-rounded btn-danger btn-sm">Manage Profile </a>
-</div>
+											</div>
 										</div>
 									</li>
 									<li role="separator" class="divider"></li>
-									
-									
+
+
 									<li><a href="@Url.Action("Index","Manage")"><i class="ti-settings"></i> Account Setting</a></li>
 									<li role="separator" class="divider"></li>
-									@if(User.Identity.IsAuthenticated)
+									@if (User.Identity.IsAuthenticated)
 									{
 										@Html.Partial("_LoginPartial");
 									}
-									
+
 								</ul>
 							</div>
 						</li>
-	
-						
+
+
 					</ul>
 				</div>
 			</nav>
@@ -305,8 +299,8 @@
 			<!-- Sidebar scroll-->
 			<div class="scroll-sidebar">
 				<!-- User profile -->
-			
-		
+
+
 				<div class="user-profile" style="background: url(~/Images/profile-background.png) no-repeat;">
 					<!-- User profile image -->
 					<div class="profile-img"> <img src="~/Images/placeholder.jpg" alt="user" /> </div>
@@ -316,7 +310,7 @@
 						<div class="dropdown-menu animated flipInY">
 							<a href="#" class="dropdown-item"><i class="ti-user"></i> My Profile</a> <a href="#" class="dropdown-item"><i class="ti-wallet"></i> My Balance</a> <a href="#" class="dropdown-item"><i class="ti-email"></i> Inbox</a>
 							<div class="dropdown-divider"></div> <a href="@Url.Action("Index","Manage")" class="dropdown-item"><i class="ti-settings"></i> Account Setting</a>
-							
+
 						</div>
 					</div>
 				</div>
@@ -324,39 +318,19 @@
 				<!-- Sidebar navigation-->
 				<nav class="sidebar-nav">
 					<ul id="sidebarnav">
-						<li class="nav-small-cap">SCHOOL ADMIN</li>
+						<li class="nav-small-cap">CLASS MANAGEMENT</li>
 						<li>
 							<a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Learning</span></a>
 							<ul aria-expanded="false" class="collapse">
 
 								<li><a href="@Url.Action("Index", "Quizes")">Quizes</a></li>
 								<li><a href="@Url.Action("Index", "Courses")">Courses</a></li>
-								<li><a href="@Url.Action("Index", "Staffs")">Instructors</a></li>
+							
 								<li><a href="@Url.Action("Index", "Learning")">Learning Material</a></li>
 							</ul>
 						</li>
 						<li>
-							<a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-laptop-windows"></i><span class="hide-menu">Administration</span></a>
-							<ul aria-expanded="false" class="collapse">
-								<li><a href="@Url.Action("Index", "UsersAdmin")">All Users</a></li>
-								<li><a href="@Url.Action("Index", "RolesAdmin")">All Roles</a></li>
-								<li><a href="@Url.Action("Index", "RolesAdmin")">Manage Roles</a></li>
-							</ul>
-						
-						@*<li>
-							<a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-bullseye"></i><span class="hide-menu">Apps</span></a>
-							<ul aria-expanded="false" class="collapse">
-								<li><a href="app-calendar.html">Calendar</a></li>
-
-							</ul>
-						</li>
-						<li>
-							<a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-email"></i><span class="hide-menu">Inbox</span></a>
-							<ul aria-expanded="false" class="collapse">
-								<li><a href="app-email.html">Mailbox</a></li>
-
-							</ul>
-						</li>*@
+							
 
 					</ul>
 				</nav>
@@ -377,9 +351,9 @@
 			<!-- Container fluid  -->
 			<!-- ============================================================== -->
 
-			<br/>
+			<br />
 			<div class="container-fluid">
-		
+
 				<div class="row">
 					<div class="card col-lg-12">
 
@@ -390,18 +364,18 @@
 					</div>
 
 				</div>
-			
+
 			</div>
-	
+
 			<footer class="footer">
 				© 2019 Abantwana Daycare  All rights reserved
 			</footer>
-		
+
 		</div>
 
 	</div>
 	@RenderSection("scripts", required: false)
-f
+	f
 	<script src="~/Content/material-pro/assets/plugins/jquery/jquery.min.js"></script>
 	<!-- Bootstrap tether Core JavaScript -->
 	<script src="~/Content/material-pro/assets/plugins/popper/popper.min.js"></script>

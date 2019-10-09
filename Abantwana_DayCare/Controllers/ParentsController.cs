@@ -21,8 +21,10 @@ namespace Abantwana_DayCare.Controllers
 		private ApplicationSignInManager _signInManager;
 		private ApplicationUserManager _userManager;
 
-		public ParentsController()
+		public ParentsController(ApplicationUserManager userManager, ApplicationRoleManager roleManager)
 		{
+			UserManager = userManager;
+			RoleManager = roleManager;
 		}
 
 		public ParentsController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
@@ -56,6 +58,20 @@ namespace Abantwana_DayCare.Controllers
 		}
 
 
+		private ApplicationRoleManager _roleManager;
+		public ApplicationRoleManager RoleManager
+		{
+			get
+			{
+				return _roleManager ?? HttpContext.GetOwinContext().Get<ApplicationRoleManager>();
+			}
+			private set
+			{
+				_roleManager = value;
+			}
+		}
+
+
 		// GET: Parents
 		public ActionResult Index()
         {
@@ -80,7 +96,10 @@ namespace Abantwana_DayCare.Controllers
         // GET: Parents/Create
         public ActionResult Create()
         {
-            return View();
+
+			ViewBag.RoleId = new SelectList( RoleManager.Roles.ToList(), "Name", "Name");
+
+			return View();
         }
 
         // POST: Parents/Create
@@ -96,13 +115,28 @@ namespace Abantwana_DayCare.Controllers
 				var user = new ApplicationUser { FullName = model.FirstName + " " + model.LastName, Id = model.ID_Number, UserName = model.FirstName + " " + model.LastName, Email = model.Email };
 				var parent = new Parent_Model { Parent_Id= model.generateID(), FirstName = model.FirstName, Email=model.Email,LastName = model.LastName,phone=model.phone, ID_Number = model.ID_Number, address = model.address, DOB = model.DOB, Work_Place = model.Work_Place, CompanyPhone = model.CompanyPhone, relationship = model.relationship };
 				var result = UserManager.Create(user, model.Password);
-				db.Parent_Model.Add(parent);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
+				if (result.Succeeded)
+				{
+					
+						var Roleresult =  UserManager.AddToRolesAsync(user.Id, "Parent");
+						if (!result.Succeeded)
+						{
+							ModelState.AddModelError("", result.Errors.First());
+							ViewBag.RoleId = new SelectList(RoleManager.Roles.ToList(), "Name", "Name");
+							return View();
+						}
+					}
 
-            return View(model);
-        }
+				db.Parent_Model.Add(parent);
+				db.SaveChanges();
+				return RedirectToAction("Index");
+			}
+
+			return View(model);
+		}
+
+            
+        
 
         // GET: Parents/Edit/5
         public ActionResult Edit(int? id)
